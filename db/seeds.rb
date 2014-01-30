@@ -10,3 +10,9 @@ User.find(1).articles << Article.create(title: 'Zebra Mussels in the St. Croix R
 User.find(2).articles << Article.create(title: 'Home on the Range', body: 'Man it sure gets lonely out here on the range. With I had a gun to shoot...', user_id: 2)
 User.find(3).articles << Article.create(title: 'Not up in here', body: 'Cant stop wont stop!', user_id: 3)
 User.find(4).articles << Article.create(title: 'My greatest movie', body: 'Was definitely Blade. Got I was such a good actor in that movie!', user_id: 4)
+
+
+Article.find(1).comments << Comment.create(body: "This article sucks!", article_id: 1)
+Article.find(2).comments << Comment.create(body: "This article is OK!", article_id: 2)
+Article.find(3).comments << Comment.create(body: "This article was an article!", article_id: 3)
+Article.find(4).comments << Comment.create(body: "This article rocked!", article_id: 4)
