@@ -4,7 +4,8 @@
 	<% @articles.each do |article| %>
 		<dt> <a href="users/<%=User.find(article.user_id).id%>/articles/<%= article.id %>"><%= article.title %></a> </dt>
 			<dd> Author: <a href="/users/<%=User.find(article.user_id).id%>"><%= User.find(article.user_id).name %></a> </dd>
-			<dd> Body: <%= article.body %> </dd>
+			<dd> Body: <%= truncate(article.body, length: 100) %> </dd>
+			<dd> Comments: <%= article.comments.count %> </dd>
 	<%end%>
 </dl>
 

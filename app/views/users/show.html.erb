@@ -3,7 +3,7 @@
 <dl>
 	<% @user.articles.each do |article| %>
 		<dt>Title: <%= article.title %></dt>
-			<dd>Body: <%= article.body %></dd>
+			<dd>Body: <%= truncate(article.body, length: 100) %></dd>
 	<% end %>
 </dl>
 
