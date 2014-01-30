@@ -1,2 +1,7 @@
-<h1>Article#new</h1>
-<p>Find me in app/views/article/new.html.erb</p>
+<h1>New Article for <%= @user.name %></h1>
+
+<%= form_for [@user, @article] do |f| %>
+	<%= f.text_field :title %><br>
+	<%= f.text_field :body %><br>
+	<%= f.submit %>
+<% end %>
