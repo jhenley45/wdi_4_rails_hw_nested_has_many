@@ -1,5 +1,7 @@
 <h1>User: <%= @user.name %></h1>
-
-<% @user.articles.each do |article| %>
-	<%= article.title %>
-<% end %>
+<dl>
+	<% @user.articles.each do |article| %>
+		<dt>Title: <%= article.title %></dt>
+			<dd>Body: <%= article.body %></dd>
+	<% end %>
+</dl>
