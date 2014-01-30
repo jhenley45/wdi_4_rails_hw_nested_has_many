@@ -1,2 +1,8 @@
-<h1>Article#index</h1>
-<p>Find me in app/views/article/index.html.erb</p>
+<h1>Look at all these articles!</h1>
+
+<dl>
+	<% @articles.each do |article| %>
+		<dt> <%= article.title %> </dt>
+			<dd> Author: <%= User.find(article.user_id).name %> </dd>
+	<%end%>
+</dl>

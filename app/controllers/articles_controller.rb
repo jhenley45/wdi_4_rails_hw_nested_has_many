@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-	before_action :get_user
+	before_action :get_user, only: [:create, :new]
 
   def show
   end
