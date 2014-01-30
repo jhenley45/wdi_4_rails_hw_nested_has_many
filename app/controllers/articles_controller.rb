@@ -1,5 +1,6 @@
 class ArticlesController < ApplicationController
-	before_action :get_user, only: [:create, :new]
+	before_action :get_user, only: [:create, :new, :edit]
+
 
   def show
   	@article = Article.find(params[:id])
@@ -23,6 +24,15 @@ class ArticlesController < ApplicationController
   end
 
   def edit
+  	@article = Article.find(params[:id])
+	end
+
+	def update
+		@article = Article.update(params[:id], article_params)
+    @article.save
+    # An alternative method... this will also save the update and return true if it worked.
+    # @bookmark.update_attributes(bookmark_params)
+    redirect_to user_article_path
 	end
 
 	private
