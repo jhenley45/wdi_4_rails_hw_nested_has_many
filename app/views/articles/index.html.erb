@@ -3,6 +3,7 @@
 <dl>
 	<% @articles.each do |article| %>
 		<dt> <%= article.title %> </dt>
-			<dd> Author: <%= User.find(article.user_id).name %> </dd>
+			<dd> Author: <a href="/users/<%=User.find(article.user_id).id%>"><%= User.find(article.user_id).name %></a> </dd>
+			<dd> Body: <%= article.body %> </dd>
 	<%end%>
 </dl>

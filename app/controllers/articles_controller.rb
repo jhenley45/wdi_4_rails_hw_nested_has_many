@@ -8,7 +8,7 @@ class ArticlesController < ApplicationController
   	if params[:id]
     	@articles = User.find(user_id).articles
 		else
-    	@articles = Article.all
+    	@articles = Article.all.order(:created_at)
 		end
   end
 
