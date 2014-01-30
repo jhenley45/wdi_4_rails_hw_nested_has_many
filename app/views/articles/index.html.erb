@@ -2,8 +2,11 @@
 
 <dl>
 	<% @articles.each do |article| %>
-		<dt> <%= article.title %> </dt>
+		<dt> <a href="users/<%=User.find(article.user_id).id%>/articles/<%= article.id %>"><%= article.title %></a> </dt>
 			<dd> Author: <a href="/users/<%=User.find(article.user_id).id%>"><%= User.find(article.user_id).name %></a> </dd>
 			<dd> Body: <%= article.body %> </dd>
 	<%end%>
 </dl>
+
+
+/users/:user_id/articles/:id(.:format)
